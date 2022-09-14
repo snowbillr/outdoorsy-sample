@@ -1,9 +1,11 @@
 import React from "react";
 
+import { CustomerUploader } from "./customer_uploader";
+
 export const Outdoorsy = () => {
   return (
     <main>
-      <section>data uploader</section>
+      <CustomerUploader />
       <section>customer display</section>
     </main>
   );
