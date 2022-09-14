@@ -1,0 +1,1 @@
+- [ ] get image importing working with esbuild (see https://github.com/rails/jsbundling-rails#how-can-i-reference-static-assets-in-javascript-code)
