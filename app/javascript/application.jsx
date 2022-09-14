@@ -1,8 +1,8 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
 
-import logoUrl from '../assets/images/outdoorsy-logo.png';
+import { Outdoorsy } from './outdoorsy';
 
-const Application = () => <div>this is the app <img src={logoUrl} /></div>;
+const Application = () => <Outdoorsy />;
 
 createRoot(document.getElementById("application-root")).render(<Application />);

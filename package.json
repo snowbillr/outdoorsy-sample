@@ -8,5 +8,11 @@
   },
   "scripts": {
     "build": "esbuild app/javascript/*.* --bundle --sourcemap --outdir=app/assets/builds --public-path=assets --loader:.png=file"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.20",
+    "eslint": "^8.23.1",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-react": "^7.31.8"
   }
 }
