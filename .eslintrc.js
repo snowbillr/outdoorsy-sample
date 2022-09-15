@@ -11,5 +11,5 @@ module.exports = {
   },
   plugins: ["react"],
   rules: {},
-  ignorePatterns: [".eslintrc.js"],
+  ignorePatterns: [".eslintrc.js", "build.js"],
 };
