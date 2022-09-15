@@ -11,13 +11,18 @@ export const FileUploader = ({ text, onUpload }) => {
   };
 
   return (
-    <div>
-      <label htmlFor="csv-file" className={styles.test}>
+    <>
+      <label htmlFor="csv-file" className={styles.label}>
         {text}
       </label>
-      .
-      <input type="file" id="csv-file" name="csv-file" onChange={onChange} />
-    </div>
+      <input
+        type="file"
+        id="csv-file"
+        name="csv-file"
+        onChange={onChange}
+        className={styles.input}
+      />
+    </>
   );
 };
 

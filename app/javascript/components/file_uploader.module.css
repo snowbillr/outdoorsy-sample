@@ -1,3 +1,10 @@
-.test {
-  background: green;
+.label {
+  display: inline;
+
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.input {
+  display: none;
 }
