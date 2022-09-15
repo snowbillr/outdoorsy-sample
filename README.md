@@ -35,4 +35,12 @@ application up and running.
 
 ## Features
 
-- JS linting
+### Development
+
+- JS linting and formatting
+- CSS modules
+- Custom ESBuild script
+
+### Product
+
+- Custom file upload control (button)

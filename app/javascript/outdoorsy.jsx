@@ -23,7 +23,36 @@ export const Outdoorsy = () => {
         <FileUploader text="upload a file" onUpload={onUpload} /> to add
         customer data.
       </section>
-      <section>{state.customerRecords.map((cr) => cr.firstName)}</section>
+      <section>
+        <table>
+          <thead>
+            <tr>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Email</th>
+              <th>Vehicle Type</th>
+              <th>Vehicle Name</th>
+              <th>Vehicle Length (feet)</th>
+            </tr>
+          </thead>
+          <tbody>
+            {state.customerRecords.map((record, index) => {
+              return (
+                <tr
+                  key={`record-${record.firstName}-${record.lastName}-${index}}`}
+                >
+                  <td>{record.firstName}</td>
+                  <td>{record.lastName}</td>
+                  <td>{record.email}</td>
+                  <td>{record.vehicleType}</td>
+                  <td>{record.vehicleName}</td>
+                  <td>{record.vehicleLength}</td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </section>
     </main>
   );
 };
