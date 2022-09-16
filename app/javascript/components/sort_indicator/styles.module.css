@@ -1,0 +1,12 @@
+.sort-indicator {
+  display: flex;
+  flex-direction: column;;
+}
+
+.direction {
+  color: lightgray;
+}
+
+.direction.active {
+  color: gray;
+}

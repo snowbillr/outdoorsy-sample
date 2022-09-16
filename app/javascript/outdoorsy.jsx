@@ -1,5 +1,7 @@
 import React, { useReducer } from "react";
+
 import { FileUploader } from "./components/file_uploader";
+import { SortIndicator } from "./components/sort_indicator";
 
 import { CustomerDataFileParser } from "./services/customer_data_file_parser";
 import { reducer } from "./state/reducer";
@@ -34,7 +36,9 @@ export const Outdoorsy = () => {
         <table>
           <thead>
             <tr>
-              <th>First Name</th>
+              <th>
+                First Name <SortIndicator direction="desc" />
+              </th>
               <th>Last Name</th>
               <th>Email</th>
               <th>Vehicle Type</th>
