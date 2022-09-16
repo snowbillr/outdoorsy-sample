@@ -4,7 +4,7 @@ import classNames from "classnames";
 
 import styles from "./styles.module.css";
 
-export const SortIndicator = ({ direction }) => {
+export const SortIndicator = ({ direction, onSort }) => {
   return (
     <div className={styles.sortIndicator}>
       <div
@@ -12,6 +12,7 @@ export const SortIndicator = ({ direction }) => {
           styles.direction,
           direction == "asc" ? styles.active : null
         )}
+        onClick={() => onSort("asc")}
       >
         ▲
       </div>
@@ -20,6 +21,7 @@ export const SortIndicator = ({ direction }) => {
           styles.direction,
           direction == "desc" ? styles.active : null
         )}
+        onClick={() => onSort("desc")}
       >
         ▼
       </div>
@@ -29,4 +31,5 @@ export const SortIndicator = ({ direction }) => {
 
 SortIndicator.propTypes = {
   direction: PropTypes.oneOf(["asc", "desc"]),
+  onSort: PropTypes.func.isRequired,
 };

@@ -1,12 +1,16 @@
 import React, { useReducer } from "react";
 
 import { FileUploader } from "./components/file_uploader";
-import { SortIndicator } from "./components/sort_indicator";
 
 import { CustomerDataFileParser } from "./services/customer_data_file_parser";
 import { reducer } from "./state/reducer";
 import { initialState } from "./state/initial_state";
-import { CUSTOMER_RECORDS_ADDED } from "./state/action_types";
+import {
+  CUSTOMER_RECORDS_ADDED,
+  TABLE_SORT_CHANGED,
+} from "./state/action_types";
+import Table from "./components/table";
+import { getCustomerRecords } from "./state/selectors";
 
 export const Outdoorsy = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
@@ -33,21 +37,73 @@ export const Outdoorsy = () => {
         customer data.
       </section>
       <section>
-        <table>
+        <Table>
           <thead>
             <tr>
-              <th>
-                First Name <SortIndicator direction="desc" />
-              </th>
-              <th>Last Name</th>
-              <th>Email</th>
-              <th>Vehicle Type</th>
-              <th>Vehicle Name</th>
-              <th>Vehicle Length (feet)</th>
+              <Table.ColumnHeader
+                label="First Name"
+                sortDirection={null}
+                onSort={(direction) =>
+                  dispatch({
+                    type: TABLE_SORT_CHANGED,
+                    payload: { field: "firstName", direction },
+                  })
+                }
+              />
+              <Table.ColumnHeader
+                label="Last Name"
+                sortDirection={null}
+                onSort={(direction) =>
+                  dispatch({
+                    type: TABLE_SORT_CHANGED,
+                    payload: { field: "lastName", direction },
+                  })
+                }
+              />
+              <Table.ColumnHeader
+                label="Email"
+                sortDirection={null}
+                onSort={(direction) =>
+                  dispatch({
+                    type: TABLE_SORT_CHANGED,
+                    payload: { field: "email", direction },
+                  })
+                }
+              />
+              <Table.ColumnHeader
+                label="Vehicle Type"
+                sortDirection={null}
+                onSort={(direction) =>
+                  dispatch({
+                    type: TABLE_SORT_CHANGED,
+                    payload: { field: "vehicleType", direction },
+                  })
+                }
+              />
+              <Table.ColumnHeader
+                label="Vehicle Name"
+                sortDirection={null}
+                onSort={(direction) =>
+                  dispatch({
+                    type: TABLE_SORT_CHANGED,
+                    payload: { field: "vehicleName", direction },
+                  })
+                }
+              />
+              <Table.ColumnHeader
+                label="Vehicle Length"
+                sortDirection={null}
+                onSort={(direction) =>
+                  dispatch({
+                    type: TABLE_SORT_CHANGED,
+                    payload: { field: "vehicleLength", direction },
+                  })
+                }
+              />
             </tr>
           </thead>
           <tbody>
-            {state.customerRecords.map((record, index) => {
+            {getCustomerRecords(state).map((record, index) => {
               return (
                 <tr
                   key={`record-${record.firstName}-${record.lastName}-${index}}`}
@@ -62,7 +118,7 @@ export const Outdoorsy = () => {
               );
             })}
           </tbody>
-        </table>
+        </Table>
       </section>
     </main>
   );
