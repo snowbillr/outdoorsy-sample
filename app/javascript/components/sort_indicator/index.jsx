@@ -7,7 +7,7 @@ import styles from "./styles.module.css";
 export const SortIndicator = ({ direction, onSort }) => {
   return (
     <div className={styles.sortIndicator}>
-      <div
+      <button
         className={classNames(
           styles.direction,
           direction == "asc" ? styles.active : null
@@ -15,8 +15,8 @@ export const SortIndicator = ({ direction, onSort }) => {
         onClick={() => onSort("asc")}
       >
         ▲
-      </div>
-      <div
+      </button>
+      <button
         className={classNames(
           styles.direction,
           direction == "desc" ? styles.active : null
@@ -24,7 +24,7 @@ export const SortIndicator = ({ direction, onSort }) => {
         onClick={() => onSort("desc")}
       >
         ▼
-      </div>
+      </button>
     </div>
   );
 };
