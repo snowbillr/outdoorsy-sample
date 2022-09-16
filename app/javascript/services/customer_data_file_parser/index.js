@@ -25,6 +25,7 @@ export class CustomerDataFileParser {
         complete: (results /*, file*/) => {
           if (results.errors.length) {
             reject();
+            return;
           }
 
           const parsedResults = results.data.map((result) => {

@@ -11,9 +11,16 @@ export const Outdoorsy = () => {
 
   const onUpload = async (file) => {
     const parser = new CustomerDataFileParser(file);
-    const records = await parser.parse();
 
-    dispatch({ type: CUSTOMER_RECORDS_ADDED, payload: records });
+    try {
+      const records = await parser.parse();
+
+      dispatch({ type: CUSTOMER_RECORDS_ADDED, payload: records });
+    } catch {
+      alert(
+        "Something went wrong parsing the file. Please fix the file and try again."
+      );
+    }
   };
 
   return (
