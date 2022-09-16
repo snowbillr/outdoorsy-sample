@@ -10,7 +10,7 @@ import {
   TABLE_SORT_CHANGED,
 } from "./state/action_types";
 import Table from "./components/table";
-import { getCustomerRecords } from "./state/selectors";
+import { getCustomerRecords, getSortDirection } from "./state/selectors";
 
 export const Outdoorsy = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
@@ -42,7 +42,7 @@ export const Outdoorsy = () => {
             <tr>
               <Table.ColumnHeader
                 label="First Name"
-                sortDirection={null}
+                sortDirection={getSortDirection(state, "firstName")}
                 onSort={(direction) =>
                   dispatch({
                     type: TABLE_SORT_CHANGED,
@@ -52,7 +52,7 @@ export const Outdoorsy = () => {
               />
               <Table.ColumnHeader
                 label="Last Name"
-                sortDirection={null}
+                sortDirection={getSortDirection(state, "lastName")}
                 onSort={(direction) =>
                   dispatch({
                     type: TABLE_SORT_CHANGED,
@@ -62,7 +62,7 @@ export const Outdoorsy = () => {
               />
               <Table.ColumnHeader
                 label="Email"
-                sortDirection={null}
+                sortDirection={getSortDirection(state, "email")}
                 onSort={(direction) =>
                   dispatch({
                     type: TABLE_SORT_CHANGED,
@@ -72,7 +72,7 @@ export const Outdoorsy = () => {
               />
               <Table.ColumnHeader
                 label="Vehicle Type"
-                sortDirection={null}
+                sortDirection={getSortDirection(state, "vehicleType")}
                 onSort={(direction) =>
                   dispatch({
                     type: TABLE_SORT_CHANGED,
@@ -82,7 +82,7 @@ export const Outdoorsy = () => {
               />
               <Table.ColumnHeader
                 label="Vehicle Name"
-                sortDirection={null}
+                sortDirection={getSortDirection(state, "vehicleName")}
                 onSort={(direction) =>
                   dispatch({
                     type: TABLE_SORT_CHANGED,
@@ -92,7 +92,7 @@ export const Outdoorsy = () => {
               />
               <Table.ColumnHeader
                 label="Vehicle Length"
-                sortDirection={null}
+                sortDirection={getSortDirection(state, "vehicleLength")}
                 onSort={(direction) =>
                   dispatch({
                     type: TABLE_SORT_CHANGED,

@@ -4,9 +4,17 @@ export const getCustomerRecords = (state) => {
     const bValue = b[state.sortOptions.field];
 
     if (state.sortOptions.direction === "asc") {
-      return aValue < bValue ? 1 : -1;
+      return aValue > bValue ? 1 : -1;
     } else {
-      return bValue < aValue ? 1 : -1;
+      return bValue > aValue ? 1 : -1;
     }
   });
+};
+
+export const getSortDirection = (state, field) => {
+  if (state.sortOptions.field === field) {
+    return state.sortOptions.direction;
+  }
+
+  return null;
 };

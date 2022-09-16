@@ -1,4 +1,5 @@
 import produce from "immer";
+
 import { CUSTOMER_RECORDS_ADDED, TABLE_SORT_CHANGED } from "./action_types";
 
 export const reducer = (state, action) =>
