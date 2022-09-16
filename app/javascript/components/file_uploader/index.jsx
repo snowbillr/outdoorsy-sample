@@ -7,7 +7,7 @@ export const FileUploader = ({ text, onUpload }) => {
   const onChange = (e) => {
     const file = e.target.files[0];
     onUpload(file);
-    e.target.value = null;
+    e.target.value = "";
   };
 
   return (
