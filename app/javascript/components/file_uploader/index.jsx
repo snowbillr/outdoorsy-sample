@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import styles from "./file_uploader.module.css";
+import styles from "./styles.module.css";
 
 export const FileUploader = ({ text, onUpload }) => {
   const onChange = (e) => {
