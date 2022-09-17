@@ -2,5 +2,5 @@
 - [x] css modules
 - [ ] file upload drag and drop
 - [ ] vehicle type icons
-- [ ] vehicle length parsing
-- [ ] sort by all fields
+- [x] vehicle length parsing
+- [x] sort by all fields
