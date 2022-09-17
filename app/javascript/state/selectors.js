@@ -1,4 +1,6 @@
 export const getCustomerRecords = (state) => {
+  if (state.sortOptions.field == null) return state.customerRecords;
+
   return [...state.customerRecords].sort((a, b) => {
     const aValue = a[state.sortOptions.field];
     const bValue = b[state.sortOptions.field];
