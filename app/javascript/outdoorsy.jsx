@@ -26,15 +26,20 @@ export const Outdoorsy = () => {
   };
 
   return (
-    <main>
-      <section>
-        Drag and drop a file onto the customer table or{" "}
-        <FileUploader text="upload a file" onUpload={onUpload} /> to add
-        customer data.
-      </section>
-      <section>
-        <CustomerTable dispatch={dispatch} state={state} />
-      </section>
-    </main>
+    <>
+      <header>
+        <h1>☼ Outdoor.sy</h1>
+      </header>
+      <main>
+        <section>
+          Drag and drop a file onto the customer table or{" "}
+          <FileUploader text="upload a file" onUpload={onUpload} /> to add
+          customer data.
+        </section>
+        <section>
+          <CustomerTable dispatch={dispatch} state={state} />
+        </section>
+      </main>
+    </>
   );
 };
