@@ -9,3 +9,10 @@
   'GRAD' 0,
   'opsz' 48
 }
+
+.color-text {
+  color: var(--text-color);
+}
+.color-accent {
+  color: var(--accent-color);
+}

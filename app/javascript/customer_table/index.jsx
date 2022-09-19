@@ -7,7 +7,6 @@ import { getCustomerRecords, getSortDirection } from "../state/selectors";
 import { TABLE_SORT_CHANGED } from "../state/action_types";
 
 import styles from "./styles.module.css";
-import classNames from "classnames";
 import { Icon } from "../components/icon";
 
 export const CustomerTable = ({ dispatch, state }) => {

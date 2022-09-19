@@ -1,6 +1,7 @@
 import React, { useReducer } from "react";
 
 import { FileUploader } from "./components/file_uploader";
+import { Icon } from "./components/icon";
 import { CustomerTable } from "./customer_table";
 
 import { CustomerDataFileParser } from "./services/customer_data_file_parser";
@@ -31,7 +32,7 @@ export const Outdoorsy = () => {
     <>
       <header className={styles.header}>
         <span className={styles.headerText}>Outdoor</span>
-        <span className={styles.headerLogo}>☼</span>
+        <Icon name="sunny" color="accent" />
         <span className={styles.headerText}>sy</span>
       </header>
       <main className={styles.main}>
