@@ -4,7 +4,10 @@ const FIELDS = [
   { name: "firstName", transform: (value) => value },
   { name: "lastName", transform: (value) => value },
   { name: "email", transform: (value) => value },
-  { name: "vehicleType", transform: (value) => value }, // custom transform
+  {
+    name: "vehicleType",
+    transform: (value) => value[0].toUpperCase() + value.slice(1),
+  },
   { name: "vehicleName", transform: (value) => value },
   {
     name: "vehicleLength",

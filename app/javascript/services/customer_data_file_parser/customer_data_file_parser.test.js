@@ -25,14 +25,14 @@ const PARSED_MOCK_DATA = [
   {
     fullName: "Greta Thunberg",
     email: "greta@future.com",
-    vehicleType: "sailboat",
+    vehicleType: "Sailboat",
     vehicleName: "Fridays For Future",
     vehicleLength: 32,
   },
   {
     fullName: "Xiuhtezcatl Martinez",
     email: "martinez@earthguardian.org",
-    vehicleType: "campervan",
+    vehicleType: "Campervan",
     vehicleName: "Earth Guardian",
     vehicleLength: 28,
   },
@@ -101,5 +101,21 @@ describe("CustomerDataFileParser", () => {
     parsedRecords.forEach((record) => {
       expect(typeof record.vehicleLength).toEqual("number");
     });
+  });
+
+  it("transforms the vehicle type to have its first letter capitalized", async () => {
+    jest
+      .spyOn(Papa, "parse")
+      .mockImplementation((file, options) =>
+        options.complete({ errors: [], data: MOCK_DATA })
+      );
+
+    const parser = new CustomerDataFileParser();
+    const parsedRecords = await parser.parse();
+
+    expect(parsedRecords.map((pr) => pr.vehicleType)).toEqual([
+      "Sailboat",
+      "Campervan",
+    ]);
   });
 });
