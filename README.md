@@ -44,6 +44,7 @@ Follow the steps below to run the application:
 - Sorting by Vehicle Type and Full name
 - Bonus: (Multiple) File drag and drop to upload
 - Bonus: Sorting by any column
+- Bonus: Fun logo
 
 ## Limitations
 
