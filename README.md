@@ -39,8 +39,11 @@ Follow the steps below to run the application:
 
 ### Product
 
-- (Multiple) File drag and drop
-- Sorting by any column
+- File upload via file selection dialog
+- Customer data display
+- Sorting by Vehicle Type and Full name
+- Bonus: (Multiple) File drag and drop to upload
+- Bonus: Sorting by any column
 
 ## Limitations
 
