@@ -19,22 +19,12 @@ export const CustomerTable = ({ dispatch, state }) => {
         <thead>
           <tr>
             <Table.ColumnHeader
-              label="First Name"
-              sortDirection={getSortDirection(state, "firstName")}
+              label="Full Name"
+              sortDirection={getSortDirection(state, "fullName")}
               onSort={(direction) =>
                 dispatch({
                   type: TABLE_SORT_CHANGED,
-                  payload: { field: "firstName", direction },
-                })
-              }
-            />
-            <Table.ColumnHeader
-              label="Last Name"
-              sortDirection={getSortDirection(state, "lastName")}
-              onSort={(direction) =>
-                dispatch({
-                  type: TABLE_SORT_CHANGED,
-                  payload: { field: "lastName", direction },
+                  payload: { field: "fullName", direction },
                 })
               }
             />
@@ -69,7 +59,7 @@ export const CustomerTable = ({ dispatch, state }) => {
               }
             />
             <Table.ColumnHeader
-              label="Vehicle Length"
+              label="Vehicle Length (feet)"
               sortDirection={getSortDirection(state, "vehicleLength")}
               onSort={(direction) =>
                 dispatch({
@@ -86,8 +76,7 @@ export const CustomerTable = ({ dispatch, state }) => {
               <tr
                 key={`record-${record.firstName}-${record.lastName}-${index}}`}
               >
-                <td>{record.firstName}</td>
-                <td>{record.lastName}</td>
+                <td>{record.fullName}</td>
                 <td>{record.email}</td>
                 <td>{record.vehicleType}</td>
                 <td>{record.vehicleName}</td>

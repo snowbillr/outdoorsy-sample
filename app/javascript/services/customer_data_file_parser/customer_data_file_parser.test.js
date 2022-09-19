@@ -23,16 +23,14 @@ const MOCK_DATA = [
 
 const PARSED_MOCK_DATA = [
   {
-    firstName: "Greta",
-    lastName: "Thunberg",
+    fullName: "Greta Thunberg",
     email: "greta@future.com",
     vehicleType: "sailboat",
     vehicleName: "Fridays For Future",
     vehicleLength: 32,
   },
   {
-    firstName: "Xiuhtezcatl",
-    lastName: "Martinez",
+    fullName: "Xiuhtezcatl Martinez",
     email: "martinez@earthguardian.org",
     vehicleType: "campervan",
     vehicleName: "Earth Guardian",

@@ -26,8 +26,7 @@ describe("CustomerTable", () => {
     const state = {
       customerRecords: [
         {
-          firstName: "Bill",
-          lastName: "Reed",
+          fullName: "Bill Reed",
           email: "bill@bill.bill",
           vehicleName: "Unrealistic Expectations",
           vehicleType: "megayacht",
@@ -42,8 +41,7 @@ describe("CustomerTable", () => {
 
     render(<CustomerTable dispatch={() => {}} state={state} />);
 
-    expect(screen.getByText("Bill")).toBeInTheDocument();
-    expect(screen.getByText("Reed")).toBeInTheDocument();
+    expect(screen.getByText("Bill Reed")).toBeInTheDocument();
     expect(screen.getByText("bill@bill.bill")).toBeInTheDocument();
     expect(screen.getByText("megayacht")).toBeInTheDocument();
     expect(screen.getByText("Unrealistic Expectations")).toBeInTheDocument();

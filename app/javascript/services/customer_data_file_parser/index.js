@@ -28,14 +28,26 @@ export class CustomerDataFileParser {
             return;
           }
 
-          const parsedResults = results.data.map((result) => {
-            return result.reduce((parsedResult, value, columnIndex) => {
-              const field = FIELDS[columnIndex];
+          const parsedResults = results.data
+            .map((result) => {
+              return result.reduce((parsedResult, value, columnIndex) => {
+                const field = FIELDS[columnIndex];
 
-              parsedResult[field.name] = field.transform(value);
-              return parsedResult;
-            }, {});
-          });
+                parsedResult[field.name] = field.transform(value);
+                return parsedResult;
+              }, {});
+            })
+            .map((parsedResult) => {
+              const customFieldResult = {
+                ...parsedResult,
+                fullName: `${parsedResult.firstName} ${parsedResult.lastName}`,
+              };
+
+              delete customFieldResult.firstName;
+              delete customFieldResult.lastName;
+
+              return customFieldResult;
+            });
 
           resolve(parsedResults);
         },

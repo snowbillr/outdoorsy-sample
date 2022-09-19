@@ -11,8 +11,7 @@ export const initialState = {
 export const statePropType = PropTypes.shape({
   customerRecords: PropTypes.arrayOf(
     PropTypes.shape({
-      firstName: PropTypes.string.isRequired,
-      lastName: PropTypes.string.isRequired,
+      fullName: PropTypes.string.isRequired,
       email: PropTypes.string.isRequired,
       vehicleName: PropTypes.string.isRequired,
       vehicleType: PropTypes.string.isRequired,
