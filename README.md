@@ -54,3 +54,7 @@ I did not take the time to enable auto prefixing for the compiled CSS files. As 
 ### Icon and font loading via CDN (FOUC)
 
 The icons and fonts are loaded from Google's CDN, which results in a brief Flash of Unstyled Content (FOUC) when the page loads. In a production environment, this would be mitigated by hosting our own font assets rather than relying on a 3rd party.
+
+### No uploaded record manipulation
+
+This would have been the next feature I'd add in given more time. In-place editing of fields and the ability to remove records from the table. This would have been done by generating a UUID for each record at upload time and using that to identify the records being edited and removed.
