@@ -50,20 +50,22 @@ export const Outdoorsy = () => {
     <>
       <header className={styles.header}>
         <span className={styles.headerText}>Outdoor</span>
-        <IconRotator>
-          <Icon name="sunny" color="accent" />
-          <Icon name="beach_access" color="accent" />
-          <Icon name="kitesurfing" color="accent" />
-          <Icon name="pool" color="accent" />
-          <Icon name="nature" color="accent" />
-          <Icon name="outdoor_grill" color="accent" />
-          <Icon name="hiking" color="accent" />
-          <Icon name="downhill_skiing" color="accent" />
-          <Icon name="scuba_diving" color="accent" />
-          <Icon name="snowboarding" color="accent" />
-          <Icon name="paragliding" color="accent" />
-          <Icon name="sailing" color="accent" />
-        </IconRotator>
+        <span className={styles.headerLogo}>
+          <IconRotator>
+            <Icon name="sunny" color="accent" />
+            <Icon name="beach_access" color="accent" />
+            <Icon name="kitesurfing" color="accent" />
+            <Icon name="pool" color="accent" />
+            <Icon name="nature" color="accent" />
+            <Icon name="outdoor_grill" color="accent" />
+            <Icon name="hiking" color="accent" />
+            <Icon name="downhill_skiing" color="accent" />
+            <Icon name="scuba_diving" color="accent" />
+            <Icon name="snowboarding" color="accent" />
+            <Icon name="paragliding" color="accent" />
+            <Icon name="sailing" color="accent" />
+          </IconRotator>
+        </span>
         <span className={styles.headerText}>sy</span>
       </header>
       <main className={styles.main}>

@@ -1,0 +1,46 @@
+.icon-rotator {
+  position: relative;
+
+  overflow: hidden;
+
+  width: 1.3em;
+  height: 1.3em;
+
+  text-align: center;
+}
+
+.icon-rotator::before {
+  content: '';
+  height: 3px;
+
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+.icon-rotator::before {
+  top: 0;
+  background: linear-gradient(var(--dark-color), transparent);
+  z-index: 1;
+}
+
+.current-icon,
+.next-icon {
+  position: absolute;
+  text-align: center;
+}
+
+.current-icon {
+  transform: translate(0, 0);
+}
+.current-icon.out {
+  transform: translate(0, -1.25em);
+  transition: transform 0.2s;
+}
+
+.next-icon {
+  transform: translate(0, 1.25em);
+}
+.next-icon.in {
+  transform: translate(0, 0);
+  transition: transform 0.2s;
+}
