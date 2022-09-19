@@ -1,4 +1,4 @@
-import React, { useReducer } from "react";
+import React, { useReducer, useState } from "react";
 
 import { FileUploader } from "./components/file_uploader";
 import { Icon } from "./components/icon";
@@ -10,8 +10,12 @@ import { initialState } from "./state/state";
 import { CUSTOMER_RECORDS_ADDED } from "./state/action_types";
 
 import styles from "./outdoorsy.module.css";
+import classNames from "classnames";
 
 export const Outdoorsy = () => {
+  const [isDragging, setDragging] = useState(false);
+  console.log(isDragging);
+
   const [state, dispatch] = useReducer(reducer, initialState);
 
   const onUpload = async (file) => {
@@ -26,6 +30,21 @@ export const Outdoorsy = () => {
         "Something went wrong parsing the file. Please fix the file and try again."
       );
     }
+  };
+
+  const onFileDrag = (e) => {
+    e.preventDefault();
+
+    setDragging(true);
+  };
+
+  const onFileDrop = (e) => {
+    e.preventDefault();
+
+    [...e.dataTransfer.items].forEach((item) => {
+      onUpload(item.getAsFile());
+    });
+    setDragging(false);
   };
 
   return (
@@ -50,7 +69,14 @@ export const Outdoorsy = () => {
             customer data.
           </div>
         </section>
-        <section>
+        <section
+          onDrop={onFileDrop}
+          onDragOver={onFileDrag}
+          onDragLeave={() => setDragging(false)}
+          className={classNames({
+            [styles.fileIsDragging]: isDragging,
+          })}
+        >
           <CustomerTable dispatch={dispatch} state={state} />
         </section>
       </main>

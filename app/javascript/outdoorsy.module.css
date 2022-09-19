@@ -53,3 +53,8 @@
 .instructions {
   margin-bottom: var(--size-lg);
 }
+
+.file-is-dragging {
+  border-radius: var(--size-sm);
+  border: var(--size-sm) dashed var(--secondary-accent-color);
+}
