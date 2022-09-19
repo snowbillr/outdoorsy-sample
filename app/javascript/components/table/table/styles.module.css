@@ -3,3 +3,12 @@
   width: 100%;
   border-collapse: collapse;
 }
+
+.table > tbody > tr:nth-child(even) {
+  background: var(--secondary-accent-color);
+}
+
+.table > tbody > tr > td,
+.table > thead> tr > th {
+  padding: var(--size-md);
+}

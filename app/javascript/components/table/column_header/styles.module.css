@@ -1,5 +1,7 @@
 .column-header {
   text-align: left;
+
+  border-bottom: 1px solid var(--muted-text-color);
 }
 
 .body {
