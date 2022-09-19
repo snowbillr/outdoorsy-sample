@@ -13,3 +13,26 @@
  *= require_tree .
  *= require_self
  */
+
+@import url('https://fonts.googleapis.com/css2?family=Dangrek&family=Nunito&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200");
+
+:root {
+  --dark-color: #2A353B;
+  --light-color: #EEEEEE;
+  --accent-color: #FFF352;
+  --text-color: #222222;
+  --muted-text-color: #888888;
+
+  --size-sm: 4px;
+  --size-md: 8px;
+  --size-lg: 16px;
+  --size-xl: 40px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+
+  box-sizing: border-box;
+}

@@ -6,11 +6,16 @@ import { statePropType } from "../state/state";
 import { getCustomerRecords, getSortDirection } from "../state/selectors";
 import { TABLE_SORT_CHANGED } from "../state/action_types";
 
+import styles from "./styles.module.css";
+import classNames from "classnames";
+import { Icon } from "../components/icon";
+
 export const CustomerTable = ({ dispatch, state }) => {
   const customerRecords = getCustomerRecords(state);
+  const isEmpty = customerRecords.length === 0;
 
   return (
-    <div>
+    <div className={styles.customerTable}>
       <Table>
         <thead>
           <tr>
@@ -93,8 +98,11 @@ export const CustomerTable = ({ dispatch, state }) => {
           })}
         </tbody>
       </Table>
-      {customerRecords.length === 0 ? (
-        <div>No customer data! Add data by uploading a customer data file.</div>
+      {isEmpty ? (
+        <div className={styles.emptyStateText}>
+          <Icon name="error" />
+          No customer data! Add data by uploading a customer data file.
+        </div>
       ) : null}
     </div>
   );

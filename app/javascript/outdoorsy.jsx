@@ -8,6 +8,8 @@ import { reducer } from "./state/reducer";
 import { initialState } from "./state/state";
 import { CUSTOMER_RECORDS_ADDED } from "./state/action_types";
 
+import styles from "./outdoorsy.module.css";
+
 export const Outdoorsy = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
@@ -27,14 +29,25 @@ export const Outdoorsy = () => {
 
   return (
     <>
-      <header>
-        <h1>☼ Outdoor.sy</h1>
+      <header className={styles.header}>
+        <span className={styles.headerText}>Outdoor</span>
+        <span className={styles.headerLogo}>☼</span>
+        <span className={styles.headerText}>sy</span>
       </header>
-      <main>
+      <main className={styles.main}>
         <section>
-          Drag and drop a file onto the customer table or{" "}
-          <FileUploader text="upload a file" onUpload={onUpload} /> to add
-          customer data.
+          <div className={styles.breadcrumbs}>
+            Admin /{" "}
+            <a className={styles.breadcrumbLink} href="/">
+              Customers
+            </a>
+          </div>
+          <h2 className={styles.title}>Customers</h2>
+          <div className={styles.instructions}>
+            Drag and drop a file onto the customer table or{" "}
+            <FileUploader text="upload a file" onUpload={onUpload} /> to add
+            customer data.
+          </div>
         </section>
         <section>
           <CustomerTable dispatch={dispatch} state={state} />

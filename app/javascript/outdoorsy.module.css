@@ -1,0 +1,55 @@
+
+.header {
+  width: 100%;
+  padding: var(--size-md) var(--size-lg);
+
+  background-color: var(--dark-color);
+
+  display: flex;
+  align-items: center;
+}
+
+.header-logo {
+  margin: 0 var(--size-sm);
+
+  color: var(--accent-color);
+  font-size: 1.5em;
+}
+
+.header-text {
+  color: var(--light-color);
+
+  font-family: 'Dangrek', sans-serif;
+  font-size: 2.5em;
+  line-height: 1;
+}
+
+.main {
+  padding: var(--size-lg);
+
+  color: var(--text-color);
+  font-family: 'Nunito', sans-serif;
+}
+
+.breadcrumbs {
+  margin-bottom: var(--size-md);
+
+  font-size: 0.75em;
+  color: var(--muted-text-color);
+  text-transform: uppercase;
+}
+
+.breadcrumb-link {
+  color: var(--muted-text-color);
+  text-decoration: none;
+}
+
+.title {
+  font-size: 1.5em;
+
+  margin-bottom: var(--size-md);
+}
+
+.instructions {
+  margin-bottom: var(--size-lg);
+}

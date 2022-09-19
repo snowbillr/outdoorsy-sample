@@ -1,0 +1,11 @@
+.icon {
+  margin: var(--size-sm);
+
+  font-family: 'Material Symbols Rounded';
+  font-size: 1.25em;
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+}

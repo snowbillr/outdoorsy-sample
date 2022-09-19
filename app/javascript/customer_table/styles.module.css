@@ -1,0 +1,11 @@
+.customer-table {
+  min-height: 300px;
+}
+
+.empty-state-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 150px;
+}
