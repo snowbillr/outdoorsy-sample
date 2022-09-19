@@ -14,20 +14,20 @@ describe("selectors", () => {
     it("returns customer records in the expected sort order for string based fields", () => {
       const state = {
         customerRecords: [
-          { firstName: "a" },
-          { firstName: "c" },
-          { firstName: "b" },
+          { fullName: "a" },
+          { fullName: "c" },
+          { fullName: "b" },
         ],
         sortOptions: {
-          field: "firstName",
+          field: "fullName",
           direction: "asc",
         },
       };
 
       expect(getCustomerRecords(state)).toEqual([
-        { firstName: "a" },
-        { firstName: "b" },
-        { firstName: "c" },
+        { fullName: "a" },
+        { fullName: "b" },
+        { fullName: "c" },
       ]);
     });
 

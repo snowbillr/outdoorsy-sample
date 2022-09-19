@@ -73,9 +73,7 @@ export const CustomerTable = ({ dispatch, state }) => {
         <tbody>
           {customerRecords.map((record, index) => {
             return (
-              <tr
-                key={`record-${record.firstName}-${record.lastName}-${index}}`}
-              >
+              <tr key={`record-${record.fullName}-${index}}`}>
                 <td>{record.fullName}</td>
                 <td>{record.email}</td>
                 <td>{record.vehicleType}</td>
