@@ -14,8 +14,6 @@ import classNames from "classnames";
 
 export const Outdoorsy = () => {
   const [isDragging, setDragging] = useState(false);
-  console.log(isDragging);
-
   const [state, dispatch] = useReducer(reducer, initialState);
 
   const onUpload = async (file) => {
