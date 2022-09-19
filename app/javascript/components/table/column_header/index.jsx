@@ -8,7 +8,10 @@ import styles from "./styles.module.css";
 export const ColumnHeader = ({ label, sortDirection, onSort }) => {
   return (
     <th className={styles.columnHeader}>
-      <div className={styles.body}>
+      <div
+        className={styles.body}
+        onClick={() => onSort(sortDirection === "asc" ? "desc" : "asc")}
+      >
         <span className={styles.label}>{label}</span>
         <SortIndicator direction={sortDirection} onSort={onSort} />
       </div>

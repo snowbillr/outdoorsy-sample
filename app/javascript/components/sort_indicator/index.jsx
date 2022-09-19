@@ -5,6 +5,12 @@ import classNames from "classnames";
 import styles from "./styles.module.css";
 
 export const SortIndicator = ({ direction, onSort }) => {
+  const onSortIndicatorClick = (e, direction) => {
+    e.preventDefault();
+    e.stopPropagation();
+    onSort(direction);
+  };
+
   return (
     <div className={styles.sortIndicator}>
       <button
@@ -12,7 +18,7 @@ export const SortIndicator = ({ direction, onSort }) => {
           styles.direction,
           direction == "asc" ? styles.active : null
         )}
-        onClick={() => onSort("asc")}
+        onClick={(e) => onSortIndicatorClick(e, "asc")}
       >
         ▲
       </button>
@@ -21,7 +27,7 @@ export const SortIndicator = ({ direction, onSort }) => {
           styles.direction,
           direction == "desc" ? styles.active : null
         )}
-        onClick={() => onSort("desc")}
+        onClick={(e) => onSortIndicatorClick(e, "desc")}
       >
         ▼
       </button>
