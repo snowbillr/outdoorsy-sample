@@ -1,5 +1,7 @@
 # Outdoor.sy
 
+This project implements the required functionality for the Outdoor.sy sample project. It runs on the latest version of Ruby on Rails with a React front-end. No server-side features are implemented however, aside from very basic routing. I had grand ambitions of storing the data in a SQLite database, but that would have ended up requiring a greater time investment than I thought was appropriate.
+
 ## Dependencies
 
 This project uses the following tool verisons:
@@ -9,16 +11,20 @@ This project uses the following tool verisons:
 - Node: 18.9.0
 - Yarn: 1.22.19
 
-Please ensure they are installed on your system and available on the command line for this repository. I've used a combination of `homebrew` and the `asdf` version manager to set this up, however, there are a variety of ways to install different versions of these tools.
+Please ensure they are installed on your system and available on the command line in the project directory. I've used a combination of `homebrew` and the `asdf` version manager to set this up, however, there are a variety of ways to install different versions of these tools.
 
 > Note: It is both possible and likely that this project will run on other versions of these tools, but that has not been tested.
 
 ## Setup
 
+Run the following commands from within the project directory:
+
 1. `$> bundle install`
 2. `$> yarn install`
 
 ## Running the app
+
+Follow the steps below to run the application:
 
 1. `$> bin/dev`
 2. Visit http://localhost:3000 in the browser.
@@ -38,5 +44,10 @@ Please ensure they are installed on your system and available on the command lin
 
 ## Limitations
 
-- No auto prefixing
-- Icon and font loading via CDN (FOUC)
+### No CSS auto prefixing
+
+I did not take the time to enable auto prefixing for the compiled CSS files. As a result, this project will stop working correctly on older browser versions. I've tested it on the latest Chrome and Firefox versions and everything works correctly there.
+
+### Icon and font loading via CDN (FOUC)
+
+The icons and fonts are loaded from Google's CDN, which results in a brief Flash of Unstyled Content (FOUC) when the page loads. In a production environment, this would be mitigated by hosting our own font assets rather than relying on a 3rd party.
